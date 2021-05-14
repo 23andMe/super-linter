@@ -26,7 +26,7 @@ FROM zricethezav/gitleaks:v7.4.0 as gitleaks
 ##################
 # Get base image #
 ##################
-FROM python:3.7-alpine
+FROM python:3.9.5-alpine
 
 ############################
 # Get the build arguements #
