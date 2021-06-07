@@ -20,7 +20,7 @@ FROM accurics/terrascan:1.6.0 as terrascan
 FROM hadolint/hadolint:latest-alpine as dockerfile-lint
 FROM assignuser/chktex-alpine:v0.1.1 as chktex
 FROM garethr/kubeval:0.15.0 as kubeval
-FROM zricethezav/gitleaks:v7.4.0 as gitleaks
+FROM zricethezav/gitleaks:v7.5.0 as gitleaks
 
 ##################
 # Get base image #
