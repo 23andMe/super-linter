@@ -25,7 +25,7 @@ FROM zricethezav/gitleaks:v7.4.0 as gitleaks
 ##################
 # Get base image #
 ##################
-FROM python:3.9-alpine as base_image
+FROM python:3.9.6-alpine as base_image
 
 ################################
 # Set ARG values used in Build #
