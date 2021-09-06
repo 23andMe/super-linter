@@ -27,7 +27,7 @@ FROM hadolint/hadolint:latest-alpine as dockerfile-lint
 FROM assignuser/chktex-alpine:v0.1.1 as chktex
 FROM garethr/kubeval:0.15.0 as kubeval
 FROM ghcr.io/assignuser/lintr-lib:0.3.0 as lintr-lib
-FROM zricethezav/gitleaks:v7.4.0 as gitleaks
+FROM zricethezav/gitleaks:v7.6.0 as gitleaks
 
 ##################
 # Get base image #
