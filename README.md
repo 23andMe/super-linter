@@ -103,13 +103,12 @@ Developers on **GitHub** can call the **GitHub Action** to lint their codebase w
 | **YAML**                         | [YamlLint](https://github.com/adrienverge/yamllint)                                                                                                                           |
 
 ### 23andMe Custom Linters
-| _Language_                       | _Linter_                                            |
-| -------------------------------- | ----------------------------------------------------|
-| _(All files)_                    | [gitleaks](https://github.com/zricethezav/gitleaks) / [semgrep](https://github.com/returntocorp/semgrep)                                                        |
-| _(Dependancy files)              | [deps-checker](https://github.com/23andMe/super-linter/blob/master/ttam-linters/deps-checker.sh)                                                                         |
-|
-| **AWS CloudFormation templates** | [cfn-nag](https://github.com/stelligent/cfn_nag)    |
-| **Python3**                      | [bandit](https://github.com/PyCQA/bandit)           |
+| _Language_                       | _Linter_                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| _(All files)_                    | [semgrep](https://github.com/returntocorp/semgrep)                                               |
+| _(Dependency files)_             | [deps-checker](https://github.com/23andMe/super-linter/blob/master/ttam-linters/deps-checker.sh) |
+| **AWS CloudFormation templates** | [cfn-nag](https://github.com/stelligent/cfn_nag)                                                 |
+| **Python3**                      | [bandit](https://github.com/PyCQA/bandit)                                                        |
 
 
 ## How to use
@@ -417,7 +416,6 @@ As a result, the `VALIDATE_[LANGUAGE]` variables behave differently from those i
 | **ENV VAR**                            | **Default Value**               | **Notes**                                                                                                                                                                                                                                                 |
 | -------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **CLOUDFORMATION_CFN_NAG_CONFIG_FILE** | `.cfnnag`                       | Filename for [cfn-nag configuration](https://github.com/stelligent/cfn_nag#profiles)                                                                                                                                                                      |
-| **GITLEAKS_CONFIG_FILE**               | `none`                          | Filename for optional [gitleaks configuration](https://github.com/zricethezav/gitleaks#configuration) (ex: `simple_regex_config.toml`). Uses the [gitleaks default](https://github.com/zricethezav/gitleaks/blob/master/config/default.go) if unspecified |
 | **OUTPUT_MODE**                        | `none`                          | Additional means for outputting findings, other than writing to stdout. Supported modes: lintly                                                                                                                                                           |
 | **PYTHON_BANDIT_CONFIG_FILE**          | `.bandit`                       | Filename for [bandit configuration](https://bandit.readthedocs.io/en/latest/config.html) (ex: `.bandit`, `tox.ini`)                                                                                                                                       |
 | **RUN_CODE_QUALITY_TOOLS**             | `false`                         | Flag to enable or disable the entire suite of code-quality-related linters. See below for a list of linters in this pack.                                                                                                                                 |
@@ -425,7 +423,6 @@ As a result, the `VALIDATE_[LANGUAGE]` variables behave differently from those i
 | **VALIDATE_CLOUDFORMATION_CFN_NAG**    | `true`                          | Flag to enable or disable the security linting process of the AWS CloudFormation language.                                                                                                                                                                |
 | **VALIDATE_DEPS_CHECKER**              | `true`                          | Flag to enable or disable the validation of pulling dependencies from approved sources.    |
 | **COMPLIANT_FILTER**                   | `none`                          | URLs to approved dependencies repository sources.                                          |
-| **VALIDATE_GITLEAKS**                  | `true`                          | Flag to enable or disable the linting process of potentially leaked secrets across all files and languages.                                                                                                                                               |
 | **VALIDATE_PYTHON_BANDIT**             | `true`                          | Flag to enable or disable the linting process of the Python language. (Utilizing: bandit)                                                                                                                                                                 |
 
 The following is a list of supported language packs.
