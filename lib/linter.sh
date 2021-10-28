@@ -934,7 +934,7 @@ LINTER_COMMANDS_ARRAY['RUBY']="rubocop -c ${RUBY_LINTER_RULES} --force-exclusion
 LINTER_COMMANDS_ARRAY['RUST_2015']="rustfmt --check --edition 2015"
 LINTER_COMMANDS_ARRAY['RUST_2018']="rustfmt --check --edition 2018"
 LINTER_COMMANDS_ARRAY['RUST_CLIPPY']="clippy"
-LINTER_COMMANDS_ARRAY['SEMGREP']="semgrep --config=p/r2c-security-audit --config=${SEMGREP_LINTER_RULES} --json"
+LINTER_COMMANDS_ARRAY['SEMGREP']="semgrep --config=p/r2c-security-audit --json"
 LINTER_COMMANDS_ARRAY['SHELL_SHFMT']="shfmt -d"
 LINTER_COMMANDS_ARRAY['SNAKEMAKE_LINT']="snakemake --lint -s"
 LINTER_COMMANDS_ARRAY['STATES']="asl-validator --json-path"
