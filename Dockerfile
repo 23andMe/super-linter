@@ -371,7 +371,7 @@ RUN apk add --no-cache \
     bash \
     ca-certificates \
     git git-lfs \
-    libc6-compat
+    gcompat libc6-compat
 
 #################################
 # Copy the libraries into image #
