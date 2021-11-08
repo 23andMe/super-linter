@@ -45,7 +45,6 @@ control "super-linter-installed-packages" do
     "perl",
     "py3-setuptools",
     "python3-dev",
-    "rakudo",
     "R-dev",
     "R-doc",
     "R",
@@ -130,7 +129,6 @@ control "super-linter-installed-commands" do
     { linter_name: "R", version_command: "R --slave -e \"r_ver <- R.Version()\\$version.string; \
             lintr_ver <- packageVersion('lintr'); \
             glue::glue('lintr { lintr_ver } on { r_ver }')\""},
-    { linter_name: "raku", version_command: "raku --version | strings -n 8"},
     { linter_name: "rubocop"},
     { linter_name: "rustfmt"},
     { linter_name: "shellcheck"},

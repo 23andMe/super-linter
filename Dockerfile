@@ -63,7 +63,7 @@ RUN apk add --no-cache \
     jpeg-dev \
     jq \
     krb5-libs \
-    libc-dev libcurl libffi-dev libgcc \
+    libc-dev libcurl libgcc \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
     linux-headers \
@@ -72,7 +72,6 @@ RUN apk add --no-cache \
     musl-dev \
     npm nodejs-current \
     openjdk11-jre \
-    openssl-dev \
     perl perl-dev \
     py3-setuptools python3-dev \
     R R-dev R-doc \
@@ -285,16 +284,10 @@ RUN curl --retry 5 --retry-delay 5 -sSLO https://github.com/pinterest/ktlint/rel
     && printf '#!/bin/bash \n\nif [[ -x "$1" ]]; then exit 0; else echo "Error: File:[$1] is not executable"; exit 1; fi' > /usr/bin/bash-exec \
     && chmod +x /usr/bin/bash-exec
 
-#################################################
-# Install Raku and additional Edge dependencies #
-#################################################
-# Basic setup, programs and init
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
-    && apk add --no-cache rakudo zef \
 ######################
 # Install CheckStyle #
 ######################
-    && CHECKSTYLE_LATEST=$(curl -s https://api.github.com/repos/checkstyle/checkstyle/releases/latest \
+RUN CHECKSTYLE_LATEST=$(curl -s https://api.github.com/repos/checkstyle/checkstyle/releases/latest \
     | grep browser_download_url \
     | grep ".jar" \
     | cut -d '"' -f 4) \

@@ -634,17 +634,6 @@ function BuildFileList() {
       FILE_ARRAY_PYTHON_PYLINT+=("${FILE}")
       FILE_ARRAY_PYTHON_MYPY+=("${FILE}")
 
-    ######################
-    # Get the RAKU files #
-    ######################
-    elif [ "${FILE_TYPE}" == "raku" ] || [ "${FILE_TYPE}" == "rakumod" ] ||
-      [ "${FILE_TYPE}" == "rakutest" ] || [ "${FILE_TYPE}" == "pm6" ] ||
-      [ "${FILE_TYPE}" == "pl6" ] || [ "${FILE_TYPE}" == "p6" ]; then
-      ################################
-      # Append the file to the array #
-      ################################
-      FILE_ARRAY_RAKU+=("${FILE}")
-
     ####################
     # Get the R files  #
     ####################
