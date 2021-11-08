@@ -62,7 +62,7 @@ RUN apk add --no-cache \
     jpeg-dev \
     jq \
     krb5-libs \
-    libc-dev libcurl libgcc \
+    libc-dev libcurl libffi-dev libgcc \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
     linux-headers \
