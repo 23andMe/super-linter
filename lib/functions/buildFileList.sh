@@ -587,18 +587,6 @@ function BuildFileList() {
       FILE_ARRAY_NATURAL_LANGUAGE+=("${FILE}")
 
     ######################
-    # Get the PHP files #
-    ######################
-    elif [ "${FILE_TYPE}" == "php" ]; then
-      ################################
-      # Append the file to the array #
-      ################################
-      FILE_ARRAY_PHP_BUILTIN+=("${FILE}")
-      FILE_ARRAY_PHP_PHPCS+=("${FILE}")
-      FILE_ARRAY_PHP_PHPSTAN+=("${FILE}")
-      FILE_ARRAY_PHP_PSALM+=("${FILE}")
-
-    ######################
     # Get the PERL files #
     ######################
     elif [ "${FILE_TYPE}" == "pl" ] || [ "${FILE_TYPE}" == "pm" ] ||

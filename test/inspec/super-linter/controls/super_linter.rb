@@ -124,11 +124,7 @@ control "super-linter-installed-commands" do
     { linter_name: "mypy"},
     { linter_name: "npm-groovy-lint"},
     { linter_name: "perl"},
-    { linter_name: "php"},
-    { linter_name: "phpcs"},
-    { linter_name: "phpstan"},
     { linter_name: "protolint", version_option: "version"},
-    { linter_name: "psalm"},
     { linter_name: "pwsh"},
     { linter_name: "pylint"},
     { linter_name: "R", version_command: "R --slave -e \"r_ver <- R.Version()\\$version.string; \
@@ -428,9 +424,6 @@ control "super-linter-validate-files" do
     "/action/lib/.automation/.yaml-lint.yml",
     "/action/lib/.automation/analysis_options.yml",
     "/action/lib/.automation/linter.yml",
-    "/action/lib/.automation/phpcs.xml",
-    "/action/lib/.automation/phpstan.neon",
-    "/action/lib/.automation/psalm.xml",
     "/action/lib/.automation/sun_checks.xml"
   ]
 

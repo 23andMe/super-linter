@@ -131,12 +131,8 @@ RUN pip3 install --no-cache-dir pipenv \
     && wget --tries=5 -q -O dotnet-install.sh https://dot.net/v1/dotnet-install.sh \
     && chmod +x dotnet-install.sh \
     && ./dotnet-install.sh --install-dir /usr/share/dotnet -channel Current -version latest \
-    && /usr/share/dotnet/dotnet tool install --tool-path /usr/bin dotnet-format --version 5.0.211103 \
-########################
-# Install Python Black #
-########################
-    && wget --tries=5 -q -O /usr/local/bin/black https://github.com/psf/black/releases/download/21.9b0/black_linux \
-    && chmod +x /usr/local/bin/black
+    && /usr/share/dotnet/dotnet tool install --tool-path /usr/bin dotnet-format --version 5.0.211103
+
 ##############################
 # Installs Perl dependencies #
 ##############################
@@ -375,36 +371,14 @@ ENV BUILD_REVISION=$BUILD_REVISION
 ENV BUILD_VERSION=$BUILD_VERSION
 ENV ARM_TTK_PSD1="${ARM_TTK_DIRECTORY}/arm-ttk-master/arm-ttk/arm-ttk.psd1"
 
-######################################
-# Install Phive dependencies and git #
-######################################
-RUN wget --tries=5 -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-    && wget --tries=5 -q https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk \
-    && apk add --no-cache \
+###############
+# Install git #
+###############
+RUN apk add --no-cache \
     bash \
     ca-certificates \
     git git-lfs \
-    glibc-${GLIBC_VERSION}.apk \
-    gnupg \
-    php7 php7-curl php7-ctype php7-dom php7-iconv php7-json php7-mbstring \
-    php7-openssl php7-phar php7-simplexml php7-tokenizer php-xmlwriter \
-    && rm glibc-${GLIBC_VERSION}.apk \
-    && wget -q --tries=5 -O /tmp/libz.tar.xz https://www.archlinux.org/packages/core/x86_64/zlib/download \
-    && mkdir /tmp/libz \
-    && tar -xf /tmp/libz.tar.xz -C /tmp/libz \
-    && mv /tmp/libz/usr/lib/libz.so* /usr/glibc-compat/lib \
-    && rm -rf /tmp/libz /tmp/libz.tar.xz \
-    && wget -q --tries=5 -O phive.phar https://phar.io/releases/phive.phar \
-    && wget -q --tries=5 -O phive.phar.asc https://phar.io/releases/phive.phar.asc \
-    && PHAR_KEY_ID="0x9D8A98B29B2D5D79" \
-    && gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys "$PHAR_KEY_ID" \
-    && gpg --verify phive.phar.asc phive.phar \
-    && chmod +x phive.phar \
-    && mv phive.phar /usr/local/bin/phive \
-    && rm phive.phar.asc \
-    && phive --no-progress install --trust-gpg-keys \
-    31C7E470E2138192,CF1A108D0E7AE720,8A03EA3B385DBAA1,12CE0F1D262429A5 \
-    --target /usr/bin phpstan@^0.12.64 psalm@^3.18.2 phpcs@^3.5.8
+    libc6-compat
 
 #################################
 # Copy the libraries into image #
@@ -422,11 +396,6 @@ COPY --from=base_image /bin/ /bin/
 COPY --from=base_image /node_modules/ /node_modules/
 COPY --from=base_image /home/r-library /home/r-library
 COPY --from=base_image /root/.tflint.d/ /root/.tflint.d/
-
-####################################################
-# Install Composer after all Libs have been copied #
-####################################################
-RUN sh -c 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer'
 
 ########################################
 # Add node packages to path and dotnet #

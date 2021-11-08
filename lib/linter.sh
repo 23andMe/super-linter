@@ -147,14 +147,6 @@ MARKDOWN_FILE_NAME="${MARKDOWN_CONFIG_FILE:-.markdown-lint.yml}"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 OPENAPI_FILE_NAME=".openapirc.yml"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
-PHP_BUILTIN_FILE_NAME="${PHP_CONFIG_FILE:-php.ini}"
-# shellcheck disable=SC2034  # Variable is referenced indirectly
-PHP_PHPCS_FILE_NAME="phpcs.xml"
-# shellcheck disable=SC2034  # Variable is referenced indirectly
-PHP_PHPSTAN_FILE_NAME="phpstan.neon"
-# shellcheck disable=SC2034  # Variable is referenced indirectly
-PHP_PSALM_FILE_NAME="psalm.xml"
-# shellcheck disable=SC2034  # Variable is referenced indirectly
 POWERSHELL_FILE_NAME=".powershell-psscriptanalyzer.psd1"
 # shellcheck disable=SC2034  # Variable is referenced indirectly
 PROTOBUF_FILE_NAME=".protolintrc.yml"
@@ -238,7 +230,7 @@ LANGUAGE_ARRAY=('ANSIBLE' 'ARM' 'BASH' 'BASH_EXEC' 'CLANG_FORMAT'
   'GITLEAKS' 'GHERKIN' 'GO' 'GOOGLE_JAVA_FORMAT' 'GROOVY' 'HTML' 'JAVA'
   'JAVASCRIPT_ES' "${JAVASCRIPT_STYLE_NAME}" 'JSCPD' 'JSON' 'JSONC' 'JSX'
   'KUBERNETES_KUBEVAL' 'KOTLIN' 'LATEX' 'LUA' 'MARKDOWN' 'NATURAL_LANGUAGE'
-  'OPENAPI' 'PERL' 'PHP_BUILTIN' 'PHP_PHPCS' 'PHP_PHPSTAN' 'PHP_PSALM'
+  'OPENAPI' 'PERL'
   'POWERSHELL' 'PROTOBUF' 'PYTHON_BANDIT' 'PYTHON_BLACK' 'PYTHON_PYLINT' 'PYTHON_FLAKE8'
   'PYTHON_ISORT' 'PYTHON_MYPY' 'R' 'RAKU' 'RUBY' 'RUST_2015' 'RUST_2018'
   'RUST_CLIPPY' 'SEMGREP' 'SHELL_SHFMT' 'SNAKEMAKE_LINT' 'SNAKEMAKE_SNAKEFMT' 'STATES'
@@ -289,10 +281,6 @@ LINTER_NAMES_ARRAY['MARKDOWN']="markdownlint"
 LINTER_NAMES_ARRAY['NATURAL_LANGUAGE']="textlint"
 LINTER_NAMES_ARRAY['OPENAPI']="spectral"
 LINTER_NAMES_ARRAY['PERL']="perl"
-LINTER_NAMES_ARRAY['PHP_BUILTIN']="php"
-LINTER_NAMES_ARRAY['PHP_PHPCS']="phpcs"
-LINTER_NAMES_ARRAY['PHP_PHPSTAN']="phpstan"
-LINTER_NAMES_ARRAY['PHP_PSALM']="psalm"
 LINTER_NAMES_ARRAY['POWERSHELL']="pwsh"
 LINTER_NAMES_ARRAY['PROTOBUF']="protolint"
 LINTER_NAMES_ARRAY['PYTHON_BANDIT']="bandit"
@@ -931,10 +919,6 @@ fi
 LINTER_COMMANDS_ARRAY['NATURAL_LANGUAGE']="textlint -c ${NATURAL_LANGUAGE_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['OPENAPI']="spectral lint -r ${OPENAPI_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PERL']="perlcritic"
-LINTER_COMMANDS_ARRAY['PHP_BUILTIN']="php -l -c ${PHP_BUILTIN_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['PHP_PHPCS']="phpcs --standard=${PHP_PHPCS_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['PHP_PHPSTAN']="phpstan analyse --no-progress --no-ansi --memory-limit 1G -c ${PHP_PHPSTAN_LINTER_RULES}"
-LINTER_COMMANDS_ARRAY['PHP_PSALM']="psalm --config=${PHP_PSALM_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['POWERSHELL']="Invoke-ScriptAnalyzer -EnableExit -Settings ${POWERSHELL_LINTER_RULES} -Path"
 LINTER_COMMANDS_ARRAY['PROTOBUF']="protolint lint --config_path ${PROTOBUF_LINTER_RULES}"
 LINTER_COMMANDS_ARRAY['PYTHON_BANDIT']="bandit --configfile ${PYTHON_BANDIT_LINTER_RULES} ${LINTER_OPTS[PYTHON_BANDIT]}"
