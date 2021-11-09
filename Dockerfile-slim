@@ -33,7 +33,7 @@ FROM ghcr.io/awkbar-devops/clang-format:v1.0.2 as clang-format
 ##################
 # Get base image #
 ##################
-FROM python:3.9.7-alpine as base_image
+FROM python:3.9.7 as base_image
 
 ################################
 # Set ARG values used in Build #
@@ -54,7 +54,6 @@ RUN apk add --no-cache \
     curl \
     file \
     gcc \
-    gcompat \
     g++ \
     git git-lfs\
     gnupg \
@@ -63,7 +62,7 @@ RUN apk add --no-cache \
     jpeg-dev \
     jq \
     krb5-libs \
-    libc-dev libc6-compat libcurl libffi-dev libgcc \
+    libc-dev libcurl libffi-dev libgcc \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
     linux-headers \
@@ -260,7 +259,7 @@ RUN CHECKSTYLE_LATEST=$(curl -s https://api.github.com/repos/checkstyle/checksty
 ################################################################################
 # Grab small clean image #######################################################
 ################################################################################
-FROM alpine:3.14.2 as final
+FROM python:3.9.7-slim as final
 
 ############################
 # Get the build arguements #
@@ -303,8 +302,7 @@ ENV IMAGE="slim"
 RUN apk add --no-cache \
     bash \
     ca-certificates \
-    git git-lfs \
-    gcompat libc6-compat
+    git git-lfs
 
 #################################
 # Copy the libraries into image #
