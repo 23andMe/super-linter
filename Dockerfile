@@ -55,6 +55,7 @@ RUN apk add --no-cache \
     curl \
     file \
     gcc \
+    gcompat \
     g++ \
     git git-lfs\
     gnupg \
@@ -63,7 +64,7 @@ RUN apk add --no-cache \
     jpeg-dev \
     jq \
     krb5-libs \
-    libc-dev libcurl libffi-dev libgcc \
+    libc-dev libc6-compat libcurl libffi-dev libgcc \
     libintl libssl1.1 libstdc++ \
     libxml2-dev libxml2-utils \
     linux-headers \
