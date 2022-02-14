@@ -127,7 +127,7 @@ jobs:
       #######################################################
       - name: Create GitHub Issue for failure
         if: failure()
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         id: create-issue
         with:
           # https://octokit.github.io/rest.js/v18#issues-create
@@ -146,7 +146,7 @@ jobs:
       # Assign admins on failure #
       ############################
       - name: Assign Admins on failure
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         if: failure()
         with:
           # https://octokit.github.io/rest.js/v18#issues-create
