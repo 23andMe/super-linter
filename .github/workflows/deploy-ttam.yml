@@ -59,7 +59,7 @@ jobs:
       # Checkout the code base (required for docker path context below) #
       ###################################################################
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       ###########################################
       # Build and Push containers to registries #
