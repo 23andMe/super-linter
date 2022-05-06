@@ -13,10 +13,7 @@
 #######################################
 # Start the job on all push to master #
 #######################################
-on:
-  push:
-    branches:
-      - 'main'
+on: push
 
 ###############
 # Set the Job #
@@ -75,4 +72,4 @@ jobs:
             BUILD_VERSION=${{ github.sha }}
           push: true
           tags: |
-            ghcr.io/23andme/super-linter:latest
+            ghcr.io/23andme/super-linter:sarahc-test
