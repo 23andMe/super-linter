@@ -11,7 +11,7 @@ jsonpointer==2.3
 jsonschema==3.2.0
 junit-xml==1.9
 networkx==2.8
-pbr==5.8.1
+pbr==5.11.1
 pyrsistent==0.18.1
 python-dateutil==2.8.2
 PyYAML==6.0
