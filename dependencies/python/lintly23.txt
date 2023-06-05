@@ -19,5 +19,5 @@ requests-toolbelt==0.9.1
 requests==2.27.1
 six==1.16.0
 unidiff==0.6.0
-urllib3==1.26.9
+urllib3==2.0.2
 wrapt==1.14.1
