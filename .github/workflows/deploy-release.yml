@@ -56,7 +56,7 @@ jobs:
       # Checkout the source code #
       ############################
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       ###########################
       # Set current date to ENV #
