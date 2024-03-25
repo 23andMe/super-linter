@@ -18,7 +18,7 @@ FROM ghcr.io/terraform-linters/tflint-bundle:v0.35.0.1 as tflint
 FROM golangci/golangci-lint:v1.45.2 as golangci-lint
 FROM hadolint/hadolint:latest-alpine as dockerfile-lint
 FROM hashicorp/terraform:1.1.9 as terraform
-FROM koalaman/shellcheck:v0.8.0 as shellcheck
+FROM koalaman/shellcheck:v0.10.0 as shellcheck
 FROM mstruebing/editorconfig-checker:2.4.0 as editorconfig-checker
 FROM mvdan/shfmt:v3.4.3 as shfmt
 FROM rhysd/actionlint:1.6.12 as actionlint
