@@ -1,6 +1,6 @@
 attrs==21.4.0
 boltons==21.0.0
-bracex==2.2.1
+bracex==2.4
 certifi==2021.10.8
 charset-normalizer==2.0.12
 click-option-group==0.5.3
