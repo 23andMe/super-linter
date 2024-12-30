@@ -12,7 +12,7 @@ jsonschema==3.2.0
 junit-xml==1.9
 networkx==2.8
 pbr==5.8.1
-pyrsistent==0.18.1
+pyrsistent==0.20.0
 python-dateutil==2.8.2
 PyYAML==6.0
 s3transfer==0.5.2

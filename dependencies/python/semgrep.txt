@@ -14,7 +14,7 @@ jsonschema==3.2.0
 packaging==21.3
 peewee==3.14.10
 pyparsing==3.0.8
-pyrsistent==0.18.1
+pyrsistent==0.20.0
 requests==2.27.1
 ruamel.yaml.clib==0.2.6
 ruamel.yaml==0.17.21
