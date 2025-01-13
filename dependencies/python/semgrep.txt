@@ -13,7 +13,7 @@ idna==3.3
 jsonschema==3.2.0
 packaging==21.3
 peewee==3.14.10
-pyparsing==3.0.8
+pyparsing==3.2.1
 pyrsistent==0.18.1
 requests==2.27.1
 ruamel.yaml.clib==0.2.6
