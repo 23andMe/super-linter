@@ -12,7 +12,7 @@ lintly23==0.7.14
 markupsafe==2.1.1
 pycparser==2.21
 pygithub==1.55
-pyjwt==2.3.0
+pyjwt==2.10.1
 pynacl==1.5.0
 python-gitlab==2.10.1
 requests-toolbelt==0.9.1
