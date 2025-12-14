@@ -1,4 +1,5 @@
-mypy==0.950
-mypy-extensions==0.4.3
-tomli==2.0.1
-typing_extensions==4.2.0
+librt==0.7.3
+mypy==1.19.0
+mypy_extensions==1.1.0
+pathspec==0.12.1
+typing_extensions==4.15.0
